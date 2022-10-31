@@ -1,0 +1,12 @@
+{
+  "name": "@fullscript/swc-plugin-jsx-remove-attribute",
+  "version": "1.0.0",
+  "description": "SWC plugin for removing JSX attributes",
+  "author": "Ryan O'Connor",
+  "license": "MIT",
+  "keywords": [
+    "swc-plugin"
+  ],
+  "main": "./swc_plugin_jsx_remove_attribute.wasm",
+  "files": []
+}
