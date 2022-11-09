@@ -7,7 +7,7 @@ swc-plugin-jsx-remove-attribute is a plugin for [swc](https://swc.rs/) used to r
 If you don't already have **swc** setup, you can follow their [getting started guide](https://swc.rs/docs/getting-started).
 
 ## Installation
-Add **graphql-codegen-object-types** to your dependencies like so:
+Add **swc-plugin-jsx-remove-attribute** to your dependencies like so:
 
 Yarn v1:
 - `yarn add https://github.com/Fullscript/swc-plugin-jsx-remove-attribute.git#1.0.0`
