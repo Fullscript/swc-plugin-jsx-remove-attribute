@@ -1261,7 +1261,7 @@ dependencies = [
 
 [[package]]
 name = "swc-plugin-jsx-remove-attribute"
-version = "0.1.0"
+version = "1.0.0"
 dependencies = [
  "serde",
  "serde_json",
@@ -1306,6 +1306,7 @@ dependencies = [
  "rustc-hash",
  "serde",
  "siphasher",
+ "sourcemap",
  "string_cache",
  "swc_atoms",
  "swc_eq_ignore_macros",
@@ -1318,9 +1319,9 @@ dependencies = [
 
 [[package]]
 name = "swc_core"
-version = "0.29.14"
+version = "0.40.42"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8043c53651190b8e3dfc8777d652a47126ac229d90f496f2159a98805e60039a"
+checksum = "63772e3b88ca6d2f310d5252c6e65c0f95027c3bf421f6546ab15302d8c0e542"
 dependencies = [
  "once_cell",
  "swc_atoms",
@@ -1422,9 +1423,9 @@ dependencies = [
 
 [[package]]
 name = "swc_ecma_transforms_base"
-version = "0.111.38"
+version = "0.111.40"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "966bbee55bdd5380216545166820b22813b1912a5558446898c9af2865d854e2"
+checksum = "89e95ec22d153e3492283d4577ec14908c3f8d67b6fcbefa89fcc42a86a9975c"
 dependencies = [
  "better_scoped_tls",
  "bitflags",
@@ -1444,16 +1445,18 @@ dependencies = [
 
 [[package]]
 name = "swc_ecma_transforms_testing"
-version = "0.113.13"
+version = "0.114.26"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "33aa010a53065cd4e42830b4f36187e64ece890342ea630e98eae82a9f001045"
+checksum = "17270bc9818b8ee7078f758b59ce8d01bdc55ea063fde01162a67ed81d390c88"
 dependencies = [
  "ansi_term",
  "anyhow",
+ "base64",
  "hex",
  "serde",
  "serde_json",
  "sha-1",
+ "sourcemap",
  "swc_common",
  "swc_ecma_ast",
  "swc_ecma_codegen",

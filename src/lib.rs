@@ -25,9 +25,9 @@ impl VisitMut for TransformVisitor {
 
         n.attrs.retain(|attr| match attr {
             JSXAttrOrSpread::JSXAttr(a) => match &a.name {
-                JSXAttrName::Ident(i) => bool::from(
-                    attrs_to_remove_iter.all(|attr_to_remove| attr_to_remove != &i.sym as &str),
-                ),
+                JSXAttrName::Ident(i) => {
+                    attrs_to_remove_iter.all(|attr_to_remove| attr_to_remove != &i.sym as &str)
+                }
                 _ => true,
             },
             _ => true,
@@ -40,17 +40,22 @@ pub fn process_transform(program: Program, metadata: TransformPluginProgramMetad
     let config = serde_json::from_str::<Options>(
         &metadata
             .get_transform_plugin_config()
-            .expect("failed to get plugin config for emotion"),
+            .expect("failed to get plugin config for jsx-remove-attribute"),
     )
-    .expect("invalid config for emotion");
+    .expect("invalid config for jsx-remove-attribute");
     program.fold_with(&mut as_folder(TransformVisitor { config }))
 }
 
-test!(
+#[cfg(test)]
+fn test_config() -> Syntax {
     Syntax::Typescript(TsConfig {
         tsx: true,
         ..Default::default()
-    }),
+    })
+}
+
+test!(
+    test_config(),
     |_| as_folder(TransformVisitor {
         config: Options {
             attributes_to_remove: vec!["data-testid".to_string()]
@@ -64,10 +69,7 @@ test!(
 );
 
 test!(
-    Syntax::Typescript(TsConfig {
-        tsx: true,
-        ..Default::default()
-    }),
+    test_config(),
     |_| as_folder(TransformVisitor {
         config: Options {
             attributes_to_remove: vec![]
@@ -81,10 +83,7 @@ test!(
 );
 
 test!(
-    Syntax::Typescript(TsConfig {
-        tsx: true,
-        ..Default::default()
-    }),
+    test_config(),
     |_| as_folder(TransformVisitor {
         config: Options {
             attributes_to_remove: vec!["data-testid".to_string()]
