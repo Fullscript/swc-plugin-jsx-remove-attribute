@@ -1,5 +1,7 @@
 # swc-plugin-jsx-remove-attribute
 
+## 🚨 DEPRECATED, please use [react-remove-properties](https://github.com/swc-project/plugins/tree/main/packages/react-remove-properties) from the SWC project instead. 🚨
+
 swc-plugin-jsx-remove-attribute is a plugin for [swc](https://swc.rs/) used to remove a specified set of attributes from JSX elements.
 
 **NOTE:** we don't have the capacity to maintain this all the time, bug support and updates are not guaranteed.
